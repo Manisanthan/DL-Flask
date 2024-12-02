@@ -72,6 +72,14 @@ def generate_prediction_plot(filepath, predicted_label, ground_truth_label):
     plt.savefig("static/prediction_result.png")
     plt.close()
 
+
+
+@app.route('/')
+def home():
+    return "Flask API is running!"
+
+
+
 # === Routes for Deep Learning Model ===
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -93,6 +101,5 @@ def predict():
     })
 
 # === Run the Flask App ===
-if __name__ == "__main__":
-    os.makedirs("static", exist_ok=True)
-    app.run(host="0.0.0.0", port=5000, debug=True)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
