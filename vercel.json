@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+      {
+          "src": "DL.py",
+          "use": "@vercel/python"
+      }
+  ],
+  "routes": [
+      {
+          "src": "/(.*)",
+          "dest": "DL.py"
+      }
+  ]
+}
+  
